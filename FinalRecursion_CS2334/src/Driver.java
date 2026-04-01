@@ -3,12 +3,9 @@ import java.math.BigInteger;
 public class Driver {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int[] practice = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13, 14, 15, 16,17,18,19,20};
-		int indexSize = practice.length  - 1;;
+	
 		Binary maliaMethod = new Binary();
-		System.out.println(maliaMethod.iterationBinarySearch(practice, 14, 2, 17));
-		System.out.println(maliaMethod.recursiveBinarySearch(practice, 14, 2, 17));
+	
 
 		int testData1 = 5000; // 5k
 		int testData2 = 10000; // 10k
@@ -27,7 +24,8 @@ public class Driver {
 		
 		// Warming up Java for recursion
 		for(int i = 0; i < 5000; i++) { 
-			recFactorial(testData1); 
+			Factorial.recFactorial(testData1); 
+			
 		}
 
 		System.out.println("RECURSION");
@@ -38,7 +36,7 @@ public class Driver {
 					System.gc();
 					startTime = System.nanoTime();
 					// ... the code being measured ...
-					result = recFactorial(testData1); // storing the result so that it does not get skipped in time calculation
+					result = Factorial.recFactorial(testData1); // storing the result so that it does not get skipped in time calculation
 					elapsedNanos = System.nanoTime() - startTime; // Calculate time spent on operation
 					totalTime = totalTime + elapsedNanos; // Total time spent for the iterations
 				}
@@ -56,7 +54,7 @@ public class Driver {
 
 		// Warming up Java for iteration
 		for(int i = 0; i < 5000; i++) { 
-			itrFactorial(testData1); 
+			Factorial.itrFactorial(testData1); 
 		}
 
 		System.out.println("ITERATION");
@@ -67,7 +65,7 @@ public class Driver {
 					System.gc();
 					startTime = System.nanoTime();
 					// ... the code being measured ...
-					result = itrFactorial(testData1); // storing the result so that it does not get skipped in time calculation
+					result = Factorial.itrFactorial(testData1); // storing the result so that it does not get skipped in time calculation
 					elapsedNanos = System.nanoTime() - startTime; // Calculate time spent on operation
 					totalTime = totalTime + elapsedNanos; // Total time spent for the iterations
 				}
@@ -80,4 +78,5 @@ public class Driver {
 			}
 	}
 
+}
 }
